@@ -6,19 +6,20 @@ Ext.define('gNetClientGUI.view.main.List', {
     xtype: 'mainlist',
 
     requires: [
-        'gNetClientGUI.store.Personnel'
+        'gNetClientGUI.store.ClientList'
     ],
 
-    title: 'Personnel',
+    title: 'Klientų sąrašas',
 
     store: {
-        type: 'personnel'
+        type: 'clientlist'
     },
 
     columns: [
-        { text: 'Name',  dataIndex: 'name', width: 100 },
-        { text: 'Email', dataIndex: 'email', width: 230 },
-        { text: 'Phone', dataIndex: 'phone', width: 150 }
+        { text: 'Identifikacijos Nr.',  dataIndex: 'id' },
+        { text: 'Srities pavadinimas', dataIndex: 'domain' },
+        { text: 'Kompiuterio vardas', dataIndex: 'pcname' },
+        { text: 'Naudotojo vardas', dataIndex: 'username' }
     ],
 
     listeners: {

@@ -27,20 +27,20 @@ Ext.define('gNetClientGUI.view.main.Main', {
         styleHtmlContent: true
     },
 
-    tabBarPosition: 'bottom',
+    tabBarPosition: 'top',
 
     items: [
         {
-            title: 'Home',
-            iconCls: 'x-fa fa-home',
+            title: 'Klientų sąrašas',
+            iconCls: 'x-fa fa-user',
             layout: 'fit',
             // The following grid shares a store with the classic version's grid as well!
             items: [{
                 xtype: 'mainlist'
             }]
         },{
-            title: 'Users',
-            iconCls: 'x-fa fa-user',
+            title: 'Užmegzti ryšiai',
+            iconCls: 'x-fa fa-',
             bind: {
                 html: '{loremIpsum}'
             }
