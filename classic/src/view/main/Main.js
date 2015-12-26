@@ -76,7 +76,7 @@ Ext.define('gNetClientGUI.view.main.Main', {
     },
 
     items: [{
-        title: 'Prisijungę klientia',
+        title: 'Klientai',
         iconCls: 'fa-users',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
