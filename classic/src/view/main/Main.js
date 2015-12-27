@@ -13,12 +13,12 @@ Ext.define('gNetClientGUI.view.main.Main', {
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
 
-        'gNetClientGUI.view.main.MainController',
         'gNetClientGUI.view.main.MainModel',
-        'gNetClientGUI.view.main.List'
+
+        'gNetClientGUI.view.main.ConnectionList',
+        'gNetClientGUI.view.main.ClientList'
     ],
 
-    controller: 'main',
     viewModel: 'main',
 
     ui: 'navigation',
@@ -80,13 +80,14 @@ Ext.define('gNetClientGUI.view.main.Main', {
         iconCls: 'fa-users',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
-            xtype: 'mainlist'
+            xtype: 'clientlist'
         }]
     }, {
         title: 'Mano ryšiai',
         iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        // The following grid shares a store with the classic version's grid as well!
+        items: [{
+            xtype: 'connectionlist'
+        }]
     }]
 });

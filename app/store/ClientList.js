@@ -3,6 +3,8 @@ Ext.define('gNetClientGUI.store.ClientList', {
 
     alias: 'store.clientlist',
 
+    controller: 'clientlist',
+
     fields: [
         'id', 'domain', 'pcname', "username"
     ],
@@ -11,7 +13,7 @@ Ext.define('gNetClientGUI.store.ClientList', {
         { id: '1', domain: 'GMC.LOCAL', pcname: 'GMC-GEDO',     username: 'gedas' },
         { id: '2', domain: 'GMC.LOCAL', pcname: 'GMC-TADO',     username: 'tadas' },
         { id: '3', domain: 'GMC.LOCAL', pcname: 'GMC-RAMO',     username: 'ramas' },
-        { id: '4', domain: 'GMC.LOCAL', pcname: 'GMC-ROLANDO',  username: 'rolkis' },
+        { id: '4', domain: 'GMC.LOCAL', pcname: 'GMC-ROLANDO',  username: 'rolkis' }
     ]},
 
     proxy: {
