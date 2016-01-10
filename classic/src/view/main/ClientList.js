@@ -10,6 +10,7 @@ Ext.define('gNetClientGUI.view.main.ClientList', {
   * Placiau: https://docs.sencha.com/extjs/6.0/6.0.0-classic/#!/api/Ext.grid.filters.Filters
   */
     plugins: 'gridfilters',
+    id: 'clientlist',
 
     requires: [
         'gNetClientGUI.store.ClientList',
@@ -19,7 +20,13 @@ Ext.define('gNetClientGUI.view.main.ClientList', {
     ],
 
     title: 'Aktyvių klientų sąrašas',
-
+    tools:[{
+      type: 'refresh',
+      listeners: {
+          click: 'onStoreRefresh'
+      }
+      
+    }],
     controller: 'clientlist',
     viewModel: 'clientlist',
 

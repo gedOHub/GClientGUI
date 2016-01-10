@@ -17,5 +17,9 @@ Ext.define('gNetClientGUI.view.main.ClientListController', {
         if (choice === 'yes') {
           //
         }
+    },
+
+    onStoreRefresh: function(){
+      Ext.getCmp('clientlist').getStore().reload();
     }
 });
