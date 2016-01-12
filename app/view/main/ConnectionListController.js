@@ -16,5 +16,13 @@ Ext.define('gNetClientGUI.view.main.ConnectionListController', {
     onConfirm: function (choice) {
         if (choice === 'yes') {
         }
-    }
+    },
+
+    onStoreRefresh: function(){
+      Ext.getCmp('connectionlist').getStore().reload();
+    },
+    // Sujungimo nutraukimas
+    closeConnection: function(view, rowIdx, colIdx, item, e, record, row){
+      console.log("Nutraukiamas sujungimas su " + record.data.clientNumber + " klientu");
+    },
 });

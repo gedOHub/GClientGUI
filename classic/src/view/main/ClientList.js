@@ -54,17 +54,17 @@ Ext.define('gNetClientGUI.view.main.ClientList', {
            items:[{
              // RDP jungtis
              icon: 'resources/icons/rdp.png',
-             tooltip: 'Connect RDP',
+             tooltip: 'Įnicijuoti RDP sujungimą',
              handler: 'rdpConnect'
            },{
              // VNC jungtis
              icon: 'resources/icons/vnc.png',
-             tooltip: 'Connect VNC',
+             tooltip: 'Įnicijuoti VNC sujungimą',
              handler: 'vncConnect'
            },{
              // Bendra jungtis
              icon: 'resources/icons/connect.png',
-             tooltip: 'Connect service',
+             tooltip: 'Įnicijuoti sujungimą',
              handler: 'connect'
            }]
         }
