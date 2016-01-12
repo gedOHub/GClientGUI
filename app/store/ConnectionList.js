@@ -34,7 +34,18 @@ Ext.define('gNetClientGUI.store.ConnectionList', {
       // Veiksmai uzrovus veiksmus
       load: function(me, records, successful, eOpts){
           if(successful != true){
+            // Veiskmai gavus klaida
               Ext.MessageBox.alert('Klaida', 'Nepavyko gauti sujungimų sąrašo', null);
+              Ext.getCmp('connectionListStatus').setText("Nepavyko gauti sujungimų sąrašo");
+          } else {
+            // Tirkinu as gauta
+            if(me.getCount() > 0){
+              // Gauta daugiau nei 0 įrašų
+              Ext.getCmp('connectionListStatus').setText("Sėkmingai gauti " + me.getCount() + " įrašai");
+            } else {
+              // Gautas sąrašas tuščias
+              Ext.getCmp('connectionListStatus').setText("Sujungimų sąrašas tuščias");
+            }
           }
       }
     }

@@ -14,6 +14,7 @@ Ext.define('gNetClientGUI.view.main.ClientListController', {
     },
 
     onStoreRefresh: function(){
+      //Ext.getCmp('clientListStatus').text = "Kraunasi...";
       Ext.getCmp('clientlist').getStore().reload();
     },
     // Veiksmai vygdant RDP jungti

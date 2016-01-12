@@ -56,6 +56,13 @@ Ext.define('gNetClientGUI.view.main.ConnectionList', {
              tooltip: 'Nutraukti sujungimą',
              handler: 'closeConnection'
            }]
-        }
-    ]
+        }],
+    fbar:{
+      align: 'rigth',
+      items:[{
+        id: 'connectionListStatus',
+        xtype: 'label',
+        text: 'Kraunasi...'
+      }]
+    }
 });

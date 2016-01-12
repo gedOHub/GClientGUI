@@ -19,6 +19,7 @@ Ext.define('gNetClientGUI.view.main.ConnectionListController', {
     },
 
     onStoreRefresh: function(){
+      //Ext.getCmp('connectionListStatus').text = "Kraunasi...";
       Ext.getCmp('connectionlist').getStore().reload();
     },
     // Sujungimo nutraukimas

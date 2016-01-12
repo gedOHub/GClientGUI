@@ -67,6 +67,13 @@ Ext.define('gNetClientGUI.view.main.ClientList', {
              tooltip: 'Įnicijuoti sujungimą',
              handler: 'connect'
            }]
+        }],
+        fbar:{
+          align: 'rigth',
+          items:[{
+            id: 'clientListStatus',
+            xtype: 'label',
+            text: 'Kraunasi...'
+          }]
         }
-    ]
 });
