@@ -1,30 +1,26 @@
 Ext.define('gNetClientGUI.store.ClientList', {
     extend: 'Ext.data.Store',
 
-    alias: 'store.clientlist',
-
+    alias: 'store.clientListStore',
+    requires: [
+        'gNetClientGUI.view.main.ClientListController'
+    ],
     controller: 'clientlist',
-
     fields: [
         'id', 'domain', 'pcname', "username"
     ],
 
-/*
-    data: { items: [
-        { id: '1', domain: 'GMC.LOCAL', pcname: 'GMC-GEDO',     username: 'gedas' },
-        { id: '2', domain: 'GMC.LOCAL', pcname: 'GMC-TADO',     username: 'tadas' },
-        { id: '3', domain: 'GMC.LOCAL', pcname: 'GMC-RAMO',     username: 'ramas' },
-        { id: '4', domain: 'GMC.LOCAL', pcname: 'GMC-ROLANDO',  username: 'rolkis' }
-    ]},
-*/
+    pageSize: 20,
     // Automatinis uzkrovimas
     autoLoad: true,
+    // Automatinis objekto sunaikinimas
+    autoDestroy: true,
     // Kur bus ieskoma informacijos
     proxy: {
         type: 'ajax',
-        //url: 'list',
         url: 'http://127.0.0.1:3000',
-        pageParam: 'clientCount',
+        // Parametras nurodantis, kad bus prasomas klientu sarasas
+        pageParam: 'clientList',
         reader:{
             // Skaitytuvo tipas
             type: 'json',
@@ -35,5 +31,13 @@ Ext.define('gNetClientGUI.store.ClientList', {
             // Indikatorius ar pavyko gauti
             successProperty: 'success'
         }
+    },
+    listeners:{
+      // Veiksmai uzrovus veiksmus
+      load: function(me, records, successful, eOpts){
+          if(successful != true){
+              Ext.MessageBox.alert('Klaida', 'Nepavyko gauti klientų sąrašo', null);
+          }
+      }
     }
 });

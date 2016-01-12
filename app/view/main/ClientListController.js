@@ -13,13 +13,19 @@ Ext.define('gNetClientGUI.view.main.ClientListController', {
         Ext.Msg.confirm('Confirm', 'Are you sure???? ClientList', 'onConfirm', this);
     },
 
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-          //
-        }
-    },
-
     onStoreRefresh: function(){
       Ext.getCmp('clientlist').getStore().reload();
+    },
+    // Veiksmai vygdant RDP jungti
+    rdpConnect: function (view, rowIdx, colIdx, item, e, record, row) {
+      console.log("RDP | ClientID: " + record.id + " ConnectPort: 3389" );
+    },
+    // Veiksmai vygdant VNC jungti
+    vncConnect: function (view, rowIdx, colIdx, item, e, record, row){
+      console.log("VNC | ClientID: " + record.id + " ConnectPort: 5900" );
+    },
+    // Veiksmai inicijuojant neparuosta jungti
+    connect: function (view, rowIdx, colIdx, item, e, record, row){
+      console.log("Connect | ClientID: " + record.id + " ConnectPort: 5900" );
     }
 });

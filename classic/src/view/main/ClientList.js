@@ -25,7 +25,7 @@ Ext.define('gNetClientGUI.view.main.ClientList', {
       listeners: {
           click: 'onStoreRefresh'
       }
-      
+
     }],
     controller: 'clientlist',
     viewModel: 'clientlist',
@@ -47,10 +47,26 @@ Ext.define('gNetClientGUI.view.main.ClientList', {
         }},{
           text: 'Naudotojo vardas', dataIndex: 'username', flex: 1, filter: {
               type: 'string'
-        }}
-    ],
-
-    listeners: {
-        select: 'onItemSelected'
-    }
+        }},{
+           xtype:'actioncolumn',
+           flex: 0.5,
+           align: 'left',
+           items:[{
+             // RDP jungtis
+             icon: 'resources/icons/rdp.png',
+             tooltip: 'Connect RDP',
+             handler: 'rdpConnect'
+           },{
+             // VNC jungtis
+             icon: 'resources/icons/vnc.png',
+             tooltip: 'Connect VNC',
+             handler: 'vncConnect'
+           },{
+             // Bendra jungtis
+             icon: 'resources/icons/connect.png',
+             tooltip: 'Connect service',
+             handler: 'connect'
+           }]
+        }
+    ]
 });
