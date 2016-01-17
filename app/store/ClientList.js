@@ -18,7 +18,7 @@ Ext.define('gNetClientGUI.store.ClientList', {
     // Kur bus ieskoma informacijos
     proxy: {
         type: 'ajax',
-        url: 'http://127.0.0.1:3000',
+        url: host,
         // Parametras nurodantis, kad bus prasomas klientu sarasas
         pageParam: 'clientList',
         reader:{

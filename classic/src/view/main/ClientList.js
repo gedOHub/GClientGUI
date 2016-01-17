@@ -49,25 +49,35 @@ Ext.define('gNetClientGUI.view.main.ClientList', {
               type: 'string'
         }},{
            xtype:'actioncolumn',
-           flex: 0.5,
-           align: 'left',
+           align: 'center',
+           width: 50,
            items:[{
              // RDP jungtis
              icon: 'resources/icons/rdp.png',
              tooltip: 'Įnicijuoti RDP sujungimą',
              handler: 'rdpConnect'
-           },{
+           }]
+         }, {
+           xtype:'actioncolumn',
+           align: 'center',
+           width: 50,
+           items:[{
              // VNC jungtis
              icon: 'resources/icons/vnc.png',
              tooltip: 'Įnicijuoti VNC sujungimą',
              handler: 'vncConnect'
-           },{
+           }]
+         },{
+           xtype:'actioncolumn',
+           align: 'center',
+           width: 50,
+           items:[{
              // Bendra jungtis
              icon: 'resources/icons/connect.png',
              tooltip: 'Įnicijuoti sujungimą',
              handler: 'connect'
            }]
-        }],
+         }],
         fbar:{
           align: 'rigth',
           items:[{
