@@ -39,7 +39,7 @@ Ext.define('gNetClientGUI.store.ClientList', {
           if(successful != true){
             // Veiksmai gavus kalida
               Ext.MessageBox.alert('Klaida', 'Nepavyko gauti klientų sąrašo', null);
-              Ext.getCmp('clientListStatus').setText("Nepavyko gauti lientų sąrašo");
+              Ext.getCmp('clientListStatus').setText("Nepavyko gauti klientų sąrašo");
           } else {
               // Tirkinu as gauta
               if(me.getCount() < 1){
