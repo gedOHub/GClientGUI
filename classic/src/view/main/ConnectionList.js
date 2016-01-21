@@ -10,16 +10,23 @@ Ext.define('gNetClientGUI.view.main.ConnectionList', {
   * Placiau: https://docs.sencha.com/extjs/6.0/6.0.0-classic/#!/api/Ext.grid.filters.Filters
   */
     plugins: 'gridfilters',
+    id: 'connectionlist',
 
     requires: [
         'gNetClientGUI.store.ConnectionList',
-        
+
         'gNetClientGUI.view.main.ConnectionListController',
         'gNetClientGUI.view.main.ConnectionListModel'
     ],
 
-    title: 'Sujungimų sąrašas',
+    title: 'Aktyvių sujungimų sąrašas',
+    tools:[{
+      type: 'refresh',
+      listeners: {
+          click: 'onStoreRefresh'
+      }
 
+    }],
     controller: 'connectionlist',
     viewModel: 'connectionlist',
 
@@ -34,12 +41,28 @@ Ext.define('gNetClientGUI.view.main.ConnectionList', {
           text: 'Kliento numeris',  dataIndex: 'clientNumber', flex: 1, filter: {
               type: 'number'
         }},{
-          text: 'Prievadas', dataIndex: 'connectedPort', flex: 1, filter: {
+          text: 'Nutolęs prievadas', dataIndex: 'connectedPort', flex: 1, filter: {
               type: 'number'
-        }}
-    ],
-
-    listeners: {
-        select: 'onItemSelected'
+        }},{
+          text: 'Vietinis prievadas', dataIndex: 'localPort', flex: 1, filter: {
+              type: 'number'
+        }},{
+           xtype:'actioncolumn',
+           flex: 0.5,
+           align: 'left',
+           items:[{
+             // RDP jungtis
+             icon: 'resources/icons/closeConnection.png',
+             tooltip: 'Nutraukti sujungimą',
+             handler: 'closeConnection'
+           }]
+        }],
+    fbar:{
+      align: 'rigth',
+      items:[{
+        id: 'connectionListStatus',
+        xtype: 'label',
+        text: 'Kraunasi...'
+      }]
     }
 });

@@ -6,9 +6,5 @@ Ext.define('gNetClientGUI.view.main.ClientListModel', {
 
     alias: 'viewmodel.clientlist',
 
-    data: {
-        name: 'gNetClientGUI'
-    }
-
     //TODO - add data, formulas and/or methods to support your view
 });
