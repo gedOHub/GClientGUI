@@ -18,7 +18,7 @@ Ext.define('gNetClientGUI.view.main.OutboundConnectionList', {
         'gNetClientGUI.view.main.OutboundConnectionListModel'
     ],
 
-    title: 'Aktyvių sujungimų sąrašas',
+    title: 'Mano inicijuotų sujungimų sąrašas',
     tools:[{
       type: 'refresh',
       listeners: {
@@ -59,7 +59,7 @@ Ext.define('gNetClientGUI.view.main.OutboundConnectionList', {
     fbar:{
       align: 'rigth',
       items:[{
-        id: 'inboundConnectionListStatus',
+        id: 'outboundConnectionListStatus',
         xtype: 'label',
         text: 'Kraunasi...'
       }]

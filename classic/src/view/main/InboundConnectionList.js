@@ -18,7 +18,7 @@ Ext.define('gNetClientGUI.view.main.InboundConnectionList', {
         'gNetClientGUI.view.main.InboundConnectionListModel'
     ],
 
-    title: 'Aktyvių sujungimų sąrašas',
+    title: 'Užmegztų ryšių su manimi sąrašas',
     tools:[{
       type: 'refresh',
       listeners: {

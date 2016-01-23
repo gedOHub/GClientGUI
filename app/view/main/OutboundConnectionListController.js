@@ -9,7 +9,7 @@ Ext.define('gNetClientGUI.view.main.OutboundConnectionListController', {
 
     onStoreRefresh: function(){
       //Ext.getCmp('connectionListStatus').text = "Kraunasi...";
-      Ext.getCmp('connectionlist').getStore().reload();
+      Ext.getCmp('outboundconnectionlist').getStore().reload();
     },
     // Sujungimo nutraukimas
     closeConnection: function(view, rowIdx, colIdx, item, e, record, row){

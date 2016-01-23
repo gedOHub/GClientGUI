@@ -15,6 +15,7 @@ Ext.define('gNetClientGUI.view.main.Main', {
 
         'gNetClientGUI.view.main.MainModel',
         'gNetClientGUI.view.main.InboundConnectionList',
+        'gNetClientGUI.view.main.OutboundConnectionList',
         'gNetClientGUI.view.main.ClientList'
     ],
 
@@ -85,8 +86,16 @@ Ext.define('gNetClientGUI.view.main.Main', {
         title: 'Mano ryšiai',
         iconCls: 'fa-user',
         // The following grid shares a store with the classic version's grid as well!
+        /*
         items: [{
-            xtype: 'inboundconnectionlist',
+            xtype: 'inboundconnectionlist'
+        }, {
+            xtype: 'outboundconnectionlist'
+        }]
+        */
+        items: [{
+            xtype: 'inboundconnectionlist'
+        },{
             xtype: 'outboundconnectionlist'
         }]
     }]

@@ -18,7 +18,7 @@ Ext.define('gNetClientGUI.store.InboundConnectionList', {
         type: 'ajax',
         url: host,
         // Parametras nurodantis, kad bus prasomas klientu sarasas
-        pageParam: 'connectionList',
+        pageParam: 'inboundConnectionList',
         reader:{
             // Skaitytuvo tipas
             type: 'json',

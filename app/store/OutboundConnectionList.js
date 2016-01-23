@@ -1,5 +1,3 @@
-var statusFieldID = 'outboundConnectionListStatus';
-
 Ext.define('gNetClientGUI.store.OutboundConnectionList', {
     extend: 'Ext.data.Store',
 
@@ -38,15 +36,15 @@ Ext.define('gNetClientGUI.store.OutboundConnectionList', {
           if(successful != true){
             // Veiskmai gavus klaida
               Ext.MessageBox.alert('Klaida', 'Nepavyko gauti sujungimų sąrašo', null);
-              Ext.getCmp(statusFieldID).setText("Nepavyko gauti sujungimų sąrašo");
+              Ext.getCmp('outboundConnectionListStatus').setText("Nepavyko gauti sujungimų sąrašo");
           } else {
             // Tirkinu as gauta
             if(me.getCount() > 0){
               // Gauta daugiau nei 0 įrašų
-              Ext.getCmp(statusFieldID).setText("Sėkmingai gauti " + me.getCount() + " įrašai");
+              Ext.getCmp('outboundConnectionListStatus').setText("Sėkmingai gauti " + me.getCount() + " įrašai");
             } else {
               // Gautas sąrašas tuščias
-              Ext.getCmp(statusFieldID).setText("Sujungimų sąrašas tuščias");
+              Ext.getCmp('outboundConnectionListStatus').setText("Sujungimų sąrašas tuščias");
             }
           }
       }
