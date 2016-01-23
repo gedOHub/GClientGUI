@@ -37,13 +37,22 @@ Ext.define('gNetClientGUI.view.main.OutboundConnectionList', {
           text: "Srauto numeris", dataIndex: 'tag', flex: 1, filter: {
               type: 'number'
         }},{
-          text: 'Kliento numeris',  dataIndex: 'clientNumber', flex: 1, filter: {
+          text: 'Kliento numeris',  dataIndex: 'clientid', flex: 1, filter: {
               type: 'number'
         }},{
-          text: 'Nutolęs prievadas', dataIndex: 'connectedPort', flex: 1, filter: {
+          text: 'Nutolęs prievadas', dataIndex: 'dport', flex: 1, filter: {
               type: 'number'
         }},{
-          text: 'Vietinis prievadas', dataIndex: 'localPort', flex: 1, filter: {
+          text: 'Vietinis prievadas', dataIndex: 'sport', flex: 1, filter: {
+              type: 'number'
+        }},{
+          text: 'Serverio SOCKET', dataIndex: 'serverSocket', flex: 1, filter: {
+              type: 'number'
+        }},{
+          text: 'Kliento SOCKET', dataIndex: 'clientSocket', flex: 1, filter: {
+              type: 'number'
+        }},{
+          text: 'Sujungimo statusas', dataIndex: 'status', flex: 1, filter: {
               type: 'number'
         }},{
            xtype:'actioncolumn',
@@ -53,7 +62,7 @@ Ext.define('gNetClientGUI.view.main.OutboundConnectionList', {
              // RDP jungtis
              icon: 'resources/icons/closeConnection.png',
              tooltip: 'Nutraukti sujungimą',
-             handler: 'closeConnection'
+             handler: 'closeTunnel'
            }]
         }],
     fbar:{

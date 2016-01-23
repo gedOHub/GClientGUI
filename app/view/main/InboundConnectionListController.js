@@ -9,16 +9,23 @@ Ext.define('gNetClientGUI.view.main.InboundConnectionListController', {
 
     alias: 'controller.inboundconnectionlist',
 
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure???? ConnectionList', 'onConfirm', this);
-    },
-
     onStoreRefresh: function(){
       //Ext.getCmp('connectionListStatus').text = "Kraunasi...";
       Ext.getCmp('inboundconnectionlist').getStore().reload();
     },
     // Sujungimo nutraukimas
-    closeConnection: function(view, rowIdx, colIdx, item, e, record, row){
-      console.log("Nutraukiamas sujungimas su " + record.data.clientNumber + " klientu");
+    closeTunnel: function(view, rowIdx, colIdx, item, e, record, row){
+      //console.log("Nutraukiamas sujungimas su " + record.data + " klientu");
+      Ext.Ajax.request({
+        url: host,
+        params:{
+          'command': 'closeTunnel',
+          'tag' : record.data.tag
+        },
+        method : "GET",
+        // 0.1s
+        timeout: 1000
+      });
+      this.onStoreRefresh();
     }
 })

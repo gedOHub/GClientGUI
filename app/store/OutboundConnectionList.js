@@ -6,7 +6,13 @@ Ext.define('gNetClientGUI.store.OutboundConnectionList', {
     controller: 'outboundconnectionlist',
 
     fields: [
-        'tag', 'clientNumber', 'connectedPort', 'localPort'
+        'tag',
+        'clientid',
+        'dport',
+        'sport',
+        'serverSocket',
+        'clientSocket',
+        'status'
     ],
     pageSize: 20,
     // Automatinis uzkrovimas
