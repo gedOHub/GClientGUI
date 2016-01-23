@@ -14,8 +14,7 @@ Ext.define('gNetClientGUI.view.main.Main', {
         'Ext.window.MessageBox',
 
         'gNetClientGUI.view.main.MainModel',
-
-        'gNetClientGUI.view.main.ConnectionList',
+        'gNetClientGUI.view.main.InboundConnectionList',
         'gNetClientGUI.view.main.ClientList'
     ],
 
@@ -87,7 +86,7 @@ Ext.define('gNetClientGUI.view.main.Main', {
         iconCls: 'fa-user',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
-            xtype: 'connectionlist'
+            xtype: 'inboundconnectionlist'
         }]
     }]
 });
