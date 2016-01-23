@@ -1,15 +1,16 @@
-Ext.define('gNetClientGUI.store.InboundConnectionList', {
+Ext.define('gNetClientGUI.store.OutboundConnectionList', {
     extend: 'Ext.data.Store',
 
-    alias: 'store.inboundconnectionlist',
+    alias: 'store.outboundconnectionlist',
 
-    controller: 'inboundconnectionlist',
+    controller: 'outboundconnectionlist',
 
     fields: [
         'tag',
         'clientid',
         'dport',
         'sport',
+        'serverSocket',
         'clientSocket',
         'status'
     ],
@@ -23,7 +24,7 @@ Ext.define('gNetClientGUI.store.InboundConnectionList', {
         type: 'ajax',
         url: host,
         // Parametras nurodantis, kad bus prasomas klientu sarasas
-        pageParam: 'inboundConnectionList',
+        pageParam: 'outboundConnectionList',
         reader:{
             // Skaitytuvo tipas
             type: 'json',
@@ -41,15 +42,15 @@ Ext.define('gNetClientGUI.store.InboundConnectionList', {
           if(successful != true){
             // Veiskmai gavus klaida
               Ext.MessageBox.alert('Klaida', 'Nepavyko gauti sujungimų sąrašo', null);
-              Ext.getCmp('inboundConnectionListStatus').setText("Nepavyko gauti sujungimų sąrašo");
+              Ext.getCmp('outboundConnectionListStatus').setText("Nepavyko gauti sujungimų sąrašo");
           } else {
             // Tirkinu as gauta
             if(me.getCount() > 0){
               // Gauta daugiau nei 0 įrašų
-              Ext.getCmp('inboundConnectionListStatus').setText("Sėkmingai gauti " + me.getCount() + " įrašai");
+              Ext.getCmp('outboundConnectionListStatus').setText("Sėkmingai gauti " + me.getCount() + " įrašai");
             } else {
               // Gautas sąrašas tuščias
-              Ext.getCmp('inboundConnectionListStatus').setText("Sujungimų sąrašas tuščias");
+              Ext.getCmp('outboundConnectionListStatus').setText("Sujungimų sąrašas tuščias");
             }
           }
       }
