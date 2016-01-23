@@ -16,9 +16,7 @@ Ext.define('gNetClientGUI.view.main.OutboundConnectionListController', {
           'command': 'closeTunnel',
           'tag' : record.data.tag
         },
-        method : "GET",
-        // 0.1s
-        timeout: 1000
+        method : "GET"
       });
       this.onStoreRefresh();
     }
