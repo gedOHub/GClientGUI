@@ -31,7 +31,7 @@ Ext.define('gNetClientGUI.view.main.ClientList', {
     viewModel: 'clientlist',
 
     store: {
-        type: 'clientlist'
+        type: 'clientListStore'
     },
 
     columns: [
