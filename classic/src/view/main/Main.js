@@ -85,14 +85,6 @@ Ext.define('gNetClientGUI.view.main.Main', {
     }, {
         title: 'Mano ryšiai',
         iconCls: 'fa-user',
-        // The following grid shares a store with the classic version's grid as well!
-        /*
-        items: [{
-            xtype: 'inboundconnectionlist'
-        }, {
-            xtype: 'outboundconnectionlist'
-        }]
-        */
         items: [{
             xtype: 'inboundconnectionlist'
         },{
